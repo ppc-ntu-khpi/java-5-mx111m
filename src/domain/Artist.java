@@ -6,6 +6,8 @@ package domain;
  */
 public class Artist extends Employee {
 
+    private String[] skiils;
+
     /**
      * Створює художника з навичками та основними даними.
      *
@@ -29,7 +31,7 @@ public class Artist extends Employee {
         super();
         this.skiils = skiils;
     }
-    
+
     /**
      * Створює художника за замовчуванням.
      */
@@ -45,22 +47,23 @@ public class Artist extends Employee {
      */
     @Override
     public String toString() {
-        return super.toString()+"\nSkills: "+getSkills();
+        return super.toString() + "\nSkills: " + getSkills();
     }
 
-    private String[] skiils;
-
     /**
-     * Повертає масив навичок у вигляді рядка.
+     * Повертає навички у вигляді рядка.
      *
      * @return список навичок
      */
     public String getSkills() {
         String s = "";
+
         for (String e : skiils) {
             s = s + e + ", ";
         }
-       s=s.substring(0, s.length() - 2);
+
+        s = s.substring(0, s.length() - 2);
+
         return s;
     }
 
@@ -70,4 +73,15 @@ public class Artist extends Employee {
      * @param skills набір навичок
      */
     public void setSkills(String[] skills) {
+        this.skiils = skills;
+    }
+
+    /**
+     * Повертає масив навичок.
+     *
+     * @return масив навичок
+     */
+    public String[] getSkillsLSist() {
+        return skiils;
+    }
 }
