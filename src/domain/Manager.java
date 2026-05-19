@@ -1,9 +1,47 @@
 package domain;
+
+/**
+ * Клас Manager описує менеджера компанії.
+ * Менеджер керує іншими працівниками.
+ */
+public class Manager extends Employee {
+
+    private Employee[] employees;
+
+    /**
+     * Створює менеджера зі списком працівників.
+     *
+     * @param employees список працівників
+     * @param name ім'я
+     * @param jobTitle посада
+     * @param level рівень
      * @param dept відділ
      */
-    public Manager(Employee[] employees, String name, String jobTitle, int level, String dept) {
+    public Manager(Employee[] employees, String name,
+            String jobTitle, int level, String dept) {
+
         super(name, jobTitle, level, dept);
         this.employees = employees;
+    }
+
+    /**
+     * Створює менеджера зі списком працівників.
+     *
+     * @param employees список працівників
+     */
+    public Manager(Employee[] employees) {
+
+        super();
+        this.employees = employees;
+    }
+
+    /**
+     * Створює менеджера за замовчуванням.
+     */
+    public Manager() {
+
+        super();
+        employees = new Employee[10];
     }
 
     /**
@@ -13,28 +51,9 @@ package domain;
      */
     @Override
     public String toString() {
-        return super.toString()+"\nEmployees: "+getEmployees();
-    }
 
-    /**
-     * Створює менеджера зі списком працівників.
-     *
-     * @param employees список працівників
-     */
-    public Manager(Employee[] employees) {
-        super();
-        this.employees = employees;
+        return super.toString() + "\nEmployees: " + getEmployees();
     }
-    
-    /**
-     * Створює менеджера за замовчуванням.
-     */
-    public Manager() {
-        super();
-        employees = new Employee[10];
-    }
-
-    private Employee[] employees;
 
     /**
      * Повертає список працівників.
@@ -42,11 +61,15 @@ package domain;
      * @return список працівників
      */
     public String getEmployees() {
+
         String s = "";
+
         for (Employee e : employees) {
             s = s + e.getName() + ", ";
         }
-        s=s.substring(0, s.length() - 2);
+
+        s = s.substring(0, s.length() - 2);
+
         return s;
     }
 
@@ -56,7 +79,8 @@ package domain;
      * @param employees список працівників
      */
     public void setEmployees(Employee[] employees) {
-        this.employees=employees;
+
+        this.employees = employees;
     }
 
     /**
@@ -65,6 +89,7 @@ package domain;
      * @return масив працівників
      */
     public Employee[] getEmployeesList() {
+
         return employees;
     }
 }
