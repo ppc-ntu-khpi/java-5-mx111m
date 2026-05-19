@@ -1,6 +1,15 @@
+/**
+ * Клас Employee описує працівника компанії.
+ * Містить основну інформацію про працівника:
+ * ім'я, посаду, рівень та відділ.
+ */
 package domain;
 public class Employee {
-
+/**
+ * Повертає інформацію про працівника у вигляді рядка.
+ *
+ * @return інформація про працівника
+ */
     @Override
     public String toString() {
         return "\nEmployee ID= " + ID + "\nName= " + name + "\nJobTitle= " + jobTitle + "\nLevel= " + level + "\nDept= " + dept;
@@ -13,6 +22,14 @@ public class Employee {
     private String dept;
 
    // private static int employeesCount = 0;
+    /**
+ * Створює нового працівника.
+ *
+ * @param name ім'я працівника
+ * @param jobTitle посада працівника
+ * @param level рівень працівника
+ * @param dept відділ працівника
+ */
 
     public Employee(String name, String jobTitle, int level, String dept) {
         this();
@@ -29,26 +46,44 @@ public class Employee {
         }
         this.dept = dept;
     }
-
+/**
+ * Створює працівника з випадковим ID.
+ */
     public Employee() {
         ID = (int)(Math.random()*1000);
 //        if (ID > 10000) {
 //            throw new NumberFormatException("ERROR! Employee's ID cannot be greater than 10000. Employee is not created!");
 //        }
     }
-
+/**
+ * Встановлює посаду працівника.
+ *
+ * @param job посада працівника
+ */
     public void setJobTitle(String job) {
         jobTitle = job;
     }
-
+/**
+ * Повертає посаду працівника.
+ *
+ * @return посада працівника
+ */
     public String getJobTitle() {
         return jobTitle;
     }
-
+/**
+ * Повертає ім'я працівника.
+ *
+ * @return ім'я працівника
+ */
     public String getName() {
         return name;
     }
-
+/**
+ * Встановлює рівень працівника.
+ *
+ * @param level рівень працівника
+ */
     public void setLevel(int level) {
         switch (level) {
             case 1:
@@ -60,19 +95,35 @@ public class Employee {
                 this.level = 1;
         }
     }
-
+/**
+ * Повертає рівень працівника.
+ *
+ * @return рівень працівника
+ */
     public int getLevel() {
         return level;
     }
-
+/**
+ * Повертає відділ працівника.
+ *
+ * @return відділ працівника
+ */
     public String getDept() {
         return dept;
     }
-
+/**
+ * Встановлює відділ працівника.
+ *
+ * @param dept відділ працівника
+ */
     public void setDept(String dept) {
         this.dept = dept;
     }
-
+/**
+ * Встановлює ім'я працівника.
+ *
+ * @param name ім'я працівника
+ */
     public void setName(String name) {
 //        boolean correctName = true;
 //        for (int i = 0; i < name.length(); i++) {
