@@ -1,21 +1,34 @@
 package domain;
-public class Manager extends Employee {
-
+     * @param dept відділ
+     */
     public Manager(Employee[] employees, String name, String jobTitle, int level, String dept) {
         super(name, jobTitle, level, dept);
         this.employees = employees;
     }
 
+    /**
+     * Повертає інформацію про менеджера.
+     *
+     * @return інформація про менеджера
+     */
     @Override
     public String toString() {
-        return super.toString()+"\nEmployees: "+getEmployees(); 
+        return super.toString()+"\nEmployees: "+getEmployees();
     }
 
+    /**
+     * Створює менеджера зі списком працівників.
+     *
+     * @param employees список працівників
+     */
     public Manager(Employee[] employees) {
         super();
         this.employees = employees;
     }
     
+    /**
+     * Створює менеджера за замовчуванням.
+     */
     public Manager() {
         super();
         employees = new Employee[10];
@@ -23,6 +36,11 @@ public class Manager extends Employee {
 
     private Employee[] employees;
 
+    /**
+     * Повертає список працівників.
+     *
+     * @return список працівників
+     */
     public String getEmployees() {
         String s = "";
         for (Employee e : employees) {
@@ -32,13 +50,21 @@ public class Manager extends Employee {
         return s;
     }
 
+    /**
+     * Встановлює список працівників.
+     *
+     * @param employees список працівників
+     */
     public void setEmployees(Employee[] employees) {
         this.employees=employees;
     }
 
+    /**
+     * Повертає масив працівників.
+     *
+     * @return масив працівників
+     */
     public Employee[] getEmployeesList() {
         return employees;
     }
-
-    
 }
